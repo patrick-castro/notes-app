@@ -1,0 +1,23 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "A simple notes application that explores the basic functionalities of node.js.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrick-castro/notes-app.git"
+  },
+  "author": "Patrick Antonio Castro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patrick-castro/notes-app/issues"
+  },
+  "homepage": "https://github.com/patrick-castro/notes-app#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "yargs": "^15.3.1"
+  }
+}
