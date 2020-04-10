@@ -47,7 +47,7 @@ const removeNote = function (title) {
     }
 };
 
-// Displays
+// Displays all the object titles in the json
 const listNotes = function () {
     const notes = loadNotes();
     if (notes.length > 0) {
