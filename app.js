@@ -51,6 +51,7 @@ yargs.command({
 });
 
 // Displays the object title and body if the queried title finds a match
+// Sample input: node app.js read --title="Grocery List"
 yargs.command({
     command: 'read',
     describe: 'Read selected note',
