@@ -32,7 +32,7 @@ const loadNotes = function () {
     }
 };
 
-// Writes/Overwrite to the json file. If it doesn't exist, fs will create one.
+// Writes/Overwrites to the json file. If it doesn't exist, fs will create one.
 const saveNote = (notes) => fs.writeFileSync('notes.json', JSON.stringify(notes));
 
 const removeNote = function (title) {
@@ -45,9 +45,21 @@ const removeNote = function (title) {
     } else {
         console.log(errorMsg('The note does not exists!'));
     }
-}
+};
+
+// Displays
+const listNotes = function () {
+    const notes = loadNotes();
+    if (notes.length > 0) {
+        notes.forEach((note) => console.log(note.title));
+    } else {
+        console.log(errorMsg('No notes available'));
+    }
+
+};
 
 module.exports = {
     addNote: addNote,
     removeNote: removeNote,
-}
+    listNotes: listNotes
+};

@@ -1,7 +1,7 @@
 const yargs = require('yargs');
 const note = require('./notes.js');
 
-//Insert a new object in the json file
+//Inserts a new object in the json file
 //Sample input: node app.js add --title="Grocery List" --body="Cereal and milk"
 yargs.command({
     command: 'add',
@@ -23,7 +23,7 @@ yargs.command({
     },
 });
 
-// Remove a json object if the queried title matches the title property of the json object
+// Removes a json object if the queried title matches the title property of the json object
 // Sample input: node app.js remove --title="Grocery List"
 yargs.command({
     command: 'remove',
@@ -37,6 +37,16 @@ yargs.command({
     },
     handler(argv) {
         note.removeNote(argv.title);
+    },
+});
+
+// Lists all the title of all json objects 
+// Sample input: node app.js list
+yargs.command({
+    command: 'list',
+    describe: 'List all created note/s',
+    handler() {
+        note.listNotes();
     },
 });
 
