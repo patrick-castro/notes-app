@@ -23,7 +23,7 @@ yargs.command({
     },
 });
 
-// Removes a json object if the queried title matches the title property of the json object
+// Removes a json object if the queried title matches the title property of the object
 // Sample input: node app.js remove --title="Grocery List"
 yargs.command({
     command: 'remove',
@@ -47,6 +47,22 @@ yargs.command({
     describe: 'List all created note/s',
     handler() {
         note.listNotes();
+    },
+});
+
+// Displays the object title and body if the queried title finds a match
+yargs.command({
+    command: 'read',
+    describe: 'Read selected note',
+    builder: {
+        title: {
+            describe: 'Read the selected note',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler(argv) {
+        note.readNote(argv.title);
     },
 });
 

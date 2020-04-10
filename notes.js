@@ -58,8 +58,21 @@ const listNotes = function () {
 
 };
 
+const readNote = function (title) {
+    const notes = loadNotes();
+    const noteToRead = notes.find((note) => note.title === title);
+
+    if (noteToRead) {
+        console.log('Title: ' + noteToRead.title);
+        console.log('Body: ' + noteToRead.body);
+    } else {
+        console.log(errorMsg('The note does not exist!'));
+    }
+};
+
 module.exports = {
     addNote: addNote,
     removeNote: removeNote,
-    listNotes: listNotes
+    listNotes: listNotes,
+    readNote: readNote
 };
