@@ -35,6 +35,19 @@ const loadNotes = function () {
 // Writes/Overwrite to the json file. If it doesn't exist, fs will create one.
 const saveNote = (notes) => fs.writeFileSync('notes.json', JSON.stringify(notes));
 
+const removeNote = function (title) {
+    const notes = loadNotes();
+    const notesToKeep = notes.filter((note) => note.title !== title);
+
+    if (notes.length > notesToKeep.length) {
+        saveNote(notesToKeep);
+        console.log(successMsg('Successfully deleted note'));
+    } else {
+        console.log(errorMsg('The note does not exists!'));
+    }
+}
+
 module.exports = {
-    addNote: addNote
+    addNote: addNote,
+    removeNote: removeNote,
 }
